@@ -24,7 +24,15 @@ based on Feldman & Cousins. 1998. PhysRevD 57, 3873 in order
 to properly handle faint signals in observations by _HST_/COS.
 
 ## Example Usage
-
+``` python 
+from feldcous import *
+grs = 16 # gross counts -- 16 for simple sig = sqrt(16)=4
+bkg = 9  # background counts -- 16 for simple sig = sqrt(9)=3
+pdet = calc_det_prob(grs,bkg) # get detection probability
+print(f'P(>N|B) = {pdet[0]:.3e}, {pdet[1]:.3f} sigma detection')
+src,src_lo,src_up = calc_source(grs,bkg) # get 1-sigma confidence intervals
+print(f'source counts: {src:0.3f}+{src_up:.3f}-{src_lo:.3f}')
+```
 
 ## BibTeX
 Flury et al. 2022 ApJS 260, 1
@@ -50,7 +58,7 @@ archivePrefix = {arXiv},
 ```
 
 Feldman & Cousins. 1998. PhysRevD 57, 3873
-```
+``` bibtex
 @ARTICLE{1998PhRvD..57.3873F,
        author = {{Feldman}, Gary J. and {Cousins}, Robert D.},
         title = "{Unified approach to the classical statistical analysis of small signals}",
