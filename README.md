@@ -12,9 +12,9 @@ and sufficiently bright sources (i.e., Skellam variates).
 
 Sampling of source probability distribution is done by
 "empirically" calculating the source cumulative distribution
-function given the background and using the inverse
-transform method to sample the source probability density
-with a set of uniform random variates.
+function given the background and gross counts and using the 
+inverse transform method to sample the source probability 
+density with a set of uniform random variates.
 
 ## References
 While this code is provided publicly, I request that any use 
@@ -26,8 +26,8 @@ to properly handle faint signals in observations by _HST_/COS.
 ## Example Usage
 ``` python 
 from feldcous import *
-grs = 16 # gross counts -- 16 for simple sig = sqrt(16)=4
-bkg = 9  # background counts -- 16 for simple sig = sqrt(9)=3
+grs = 16 # gross counts -- 16 for simple sig = sqrt(16) = 4
+bkg = 9  # background counts -- 9 for simple sig = sqrt(9) = 3
 pdet = calc_det_prob(grs,bkg) # get detection probability
 print(f'P(>N|B) = {pdet[0]:.3e}, {pdet[1]:.3f} sigma detection')
 src,src_lo,src_up = calc_source(grs,bkg) # get 1-sigma confidence intervals
