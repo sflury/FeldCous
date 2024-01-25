@@ -47,7 +47,8 @@ bkg = 9  # background counts -- 9 for simple sig = sqrt(9) = 3
 from numpy import linspace
 n = sample_source(grs,bkg,linspace(0,1,101),n_samp=10000)
 ```
-which produces the following distribution of variates
+which produces the following distribution of source variates
+
 ![histogram of variates drawn from the distribution of a faint signal given the gross and background counts](feldcous_examp.png "Faint source counts distribution")
 
 Sampling the 
