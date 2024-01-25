@@ -23,7 +23,7 @@ I developed and implemented this script for Flury et al. 2022 ApJS 260, 1
 based on Feldman & Cousins. 1998. PhysRevD 57, 3873 in order 
 to properly handle faint signals in observations by _HST_/COS.
 
-## Example Usage
+## Example Usage - Source Detection and Confidence Intervals
 ``` python 
 from feldcous import *
 grs = 16 # gross counts -- 16 for simple sig = sqrt(16) = 4
@@ -33,7 +33,24 @@ print(f'P(>N|B) = {pdet[0]:.3e}, {pdet[1]:.3f} sigma detection')
 src,src_lo,src_up = calc_source(grs,bkg) # get 1-sigma confidence intervals
 print(f'source counts: {src:0.3f}+{src_up:.3f}-{src_lo:.3f}')
 ```
+which prints the following to the command line
+```
+P(>N|B) = 1.111e-02, 2.287 sigma detection
+source counts: 7.000+4.790-3.660
+```
 
+## Example Usage - Drawing Source Samples
+``` python 
+from feldcous import *
+grs = 16 # gross counts -- 16 for simple sig = sqrt(16) = 4
+bkg = 9  # background counts -- 9 for simple sig = sqrt(9) = 3
+from numpy import linspace
+n = sample_source(grs,bkg,linspace(0,1,101),n_samp=10000)
+```
+which produces the following distribution of variates
+![histogram of variates drawn from the distribution of a faint signal given the gross and background counts](feldcous_examp.png "Faint source counts distribution")
+
+Sampling the 
 ## BibTeX
 Flury et al. 2022 ApJS 260, 1
 ``` bibtex
