@@ -1,4 +1,4 @@
-# feldcous
+# FeldCous
 Robust statistics of low count sources (the "correct" way),
 including detection probabilities, confidence intervals, 
 and sampling of the highly non-Gaussian probability 
@@ -25,7 +25,7 @@ to properly handle faint signals in observations by _HST_/COS.
 
 ## Example Usage - Source Detection and Confidence Intervals
 ``` python 
-from feldcous import *
+from FeldCous import *
 grs = 16 # gross counts -- 16 for simple sig = sqrt(16) = 4
 bkg = 9  # background counts -- 9 for simple sig = sqrt(9) = 3
 pdet = calc_det_prob(grs,bkg) # get detection probability
@@ -41,7 +41,7 @@ source counts: 7.000+4.790-3.660
 
 ## Example Usage - Drawing Faint Source Samples
 ``` python 
-from feldcous import *
+from FeldCous import *
 grs = 16 # gross counts -- 16 for simple sig = sqrt(16) = 4
 bkg = 9  # background counts -- 9 for simple sig = sqrt(9) = 3
 from numpy import linspace
