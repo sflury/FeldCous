@@ -74,6 +74,11 @@ archivePrefix = {arXiv},
 }
 ```
 
+Zenodo DOI
+
+[![DOI](https://zenodo.org/badge/673807566.svg)](https://doi.org/10.5281/zenodo.14857986)
+
+
 Feldman & Cousins. 1998. PhysRevD 57, 3873
 ``` bibtex
 @ARTICLE{1998PhRvD..57.3873F,
